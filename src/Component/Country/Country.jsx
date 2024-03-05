@@ -1,7 +1,7 @@
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import './Country.css';
-const Country = ({country}) => {
+const Country = ({country, handleVisitedCountry}) => {
     console.log(country);
     const {name, flags, population, cca3}= country;
 
@@ -16,6 +16,7 @@ const Country = ({country}) => {
             <img src={flags.png}></img>
             <p>Population: {population} </p>
             <p>Code: { cca3}</p>
+            <button onClick={()=>handleVisitedCountry(country)}>make list</button>
             <button onClick={handleVisited}>{visited ? 'visited' : 'Not-visited'}</button>
             {visited ? 'I have visited' : 'i want to visit'}
         </div>
